@@ -10,9 +10,9 @@ if ($mysqli->connect_errno) {
 
 $result = mysqli->query("SELECT * FROM Users");
 
-echo "<table border='1'>
+echo "<html><body><table border='1'>
 <tr>
-<th>Firstname</th>
+<th>User ID</th>
 </tr>";
 
 while($row = mysqli_fetch_array($result))
@@ -21,7 +21,7 @@ echo "<tr>";
 echo "<td>" . $row['user_id'] . "</td>";
 echo "</tr>";
 }
-echo "</table>";
+echo "</table></body></html>";
 
 $mysqli->close();
 
