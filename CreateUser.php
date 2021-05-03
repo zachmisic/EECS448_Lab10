@@ -11,19 +11,17 @@ if ($mysqli->connect_errno) {
 }
 
 
-if ( isset($_POST['submit']) ) {
+$user_id = $_POST['user_id'];
+$insert = mysqli->query("INSERT INTO Users (user_id) VALUES ($user_id)");
 
-	$user_id = $_POST['user_id'];
-	$insert = mysqli->query("INSERT INTO Users (user_id) VALUES ($user_id)");
-
-	if(!$insert) {
-		echo mysqli_error();
-	}
-	else {
-		echo "User added";
-	}
-
+if(!$insert) {
+	echo mysqli_error();
 }
+else {
+	echo "User added";
+}
+echo "resolved";
+
 /* close connection */
 $mysqli->close();
 
